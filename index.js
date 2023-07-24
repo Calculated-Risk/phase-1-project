@@ -1,3 +1,8 @@
+/*  ADD BACKGROUND THAT TRANSITIONS FROM DIFFERENT COUNTRY BACKGROUNDS (ex: shows cathedrals from Rome,
+ then it transitions to NYC view background...etc*/
+
+
+
 // Add items to DOM once the "submit" option has been clicked
 countryForm.addEventListener("submit", function(e) {
     e.preventDefault();

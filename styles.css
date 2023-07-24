@@ -5,10 +5,15 @@ h1 {
 
 #introParagraph {
     text-align: center;
+    color: rgb(222, 58, 58);
     
 }
 
 #countryForm {
+    text-align: center;
+}
+
+#countryResults {
     text-align: center;
 }
 
