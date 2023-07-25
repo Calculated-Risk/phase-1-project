@@ -3,13 +3,16 @@
 
  /////////////  GLOBAL  VARIABLES  ///////////////
  const formText = document.getElementById("countryName")
+ const countryInfoContainer = document.getElementById("countryResults")
  
-
  ////////////////////////////////////////////////
 
+// Change Color for Hovered State //
+h1.addEventListener("mouseover", function (e){
+    console.log('hovered')
+})
 
-
-// Add items to DOM once the "submit" option has been clicked
+// Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
     e.preventDefault();
     getCountryInput()
@@ -17,10 +20,10 @@ countryForm.addEventListener("submit", function(e) {
     countryForm.reset();
 })
 
-// Getting the country name from user input    
+// Getting the country name from user input //
 function getCountryInput() {
 const formInput = formText.value;
-fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
+fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     headers: {
     'Content-Type': 'application/json',
     'Accept': "application/json"
@@ -28,21 +31,14 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
 })
 .then (response => response.json())
 .then (countryData => {
-  countryData.map(country => console.log(country.name.common, country.independent))
-  
+  countryData.map(country => {
+    const h2Title = document.createElement('h2')
+    h2Title.innerText = country.name.common
+    countryInfoContainer.append(h2Title)}) 
 })
+.catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
 }
 
 
 
 
-// Change Color for Hovered State
-h1.addEventListener("mouseover", function (e){
- console.log('hovered')
-})
-
-/* fetch ("https://restcountries.com/v3.1/all")
-.then (response => response.json())
-.then (countryData => {
-  countryData.map(country => console.log(country.name.common, country.independent))
-*/
