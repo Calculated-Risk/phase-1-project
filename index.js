@@ -40,14 +40,17 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     const countryFlag = country.flag
     const population = country.population;
     const unMember = country.unMember;
-    
     list.append('Country Flag: ' + countryFlag, ' Population: ' + population, ' Member of the UN? ' + unMember )
-
-
-
-countryUnorderedList.append(h2Title, list)
-})})
+    countryUnorderedList.append(h2Title, list)
+  })
+})
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
 }
 
+
+// STILL HAVENT ADDED THIS IN CORRECTLY!
+//Clear DOM after search results appear and new input is requested
+function clearScreen(){
+    document.getElementById('countryResults').innerText = '';
+}
 
