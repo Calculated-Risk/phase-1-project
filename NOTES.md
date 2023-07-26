@@ -19,3 +19,4 @@
 ### Out of Scope Features
     * Save the country to a list in the page to reference later.
     * Ability to filter search inquiry based on country attributes/properties
+    * Like a certain country result and save it for the future
