@@ -6,11 +6,12 @@
  const countryInfoContainer = document.getElementById("countryResults")
  const createParagraph = document.createElement('p')
  const countryUnorderedList = document.getElementById('countryUnorderedList')
+ const submit = document.getElementById('submit')
  
  ////////////////////////////////////////////////
 
-// Change Color for Hovered State //
-h1.addEventListener("mouseover", function (e){
+// Change Color for Hovered State OVER SUBMIT BUTTON//
+submit.addEventListener("mouseover", function (e){
     console.log('hovered')
 })
 
