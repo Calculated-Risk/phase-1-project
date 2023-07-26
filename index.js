@@ -6,6 +6,7 @@
  const countryInfoContainer = document.getElementById("countryResults")
  const createParagraph = document.createElement('p')
  const countryUnorderedList = document.getElementById('countryUnorderedList')
+ const countryContainerList = document.getElementById('countryContainerList')
  const submit = document.getElementById('submit')
  
  ////////////////////////////////////////////////
@@ -35,14 +36,15 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 .then (response => response.json())
 .then (countryData => {
   countryData.map(country => {
-    const list = document.createElement("li")
     const h2Title = document.createElement('h2')
     h2Title.innerText = country.name.common;
-    const countryFlag = country.flag
+    const countryFlag = `${formInput} Flag: ` + country.flag
     const population = country.population;
-    const unMember = country.unMember;
-    list.append('Country Flag: ' + countryFlag, ' Population: ' + population, ' Member of the UN? ' + unMember )
-    countryUnorderedList.append(h2Title, list)
+    const unMember = 'Member of the United Nations? ' + country.unMember;
+    nameContainer.append(h2Title)
+    flagContainer.append(countryFlag)
+    populationContainer.append(population)
+    unMemberContainer.append(unMember)
   })
 })
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
