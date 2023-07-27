@@ -1,13 +1,20 @@
 /////////////  GLOBAL  VARIABLES  ///////////////
  const formText = document.getElementById("countryName")
  const countryInfoContainer = document.getElementById("innerDivForCountryResults")
+ const countryResultsDiv = document.getElementById("countryResults")
  const submit = document.getElementById('submit')
 
 
 // Change Color for Hovered State OVER SUBMIT BUTTON//
 submit.addEventListener("mouseover", function (e){
-    console.log('hovered')
+    submit.style.background = 'green';
 })
+
+// Change Color AFTER Hovered State changed//
+submit.addEventListener("mouseout", function (e){
+  submit.style.background = 'blue';
+})
+
 
 // Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
@@ -33,7 +40,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     h2Title.innerText = country.name.common;
     const countryFlag = country.flag
     const population = country.population;
-    let unMember =  country.unMember;
+    const unMember =  country.unMember;
     nameContainer.append(h2Title)
     flagContainer.append(countryFlag)
     populationContainer.append(population) 
@@ -43,6 +50,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 })
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
 }
+
 
 
 

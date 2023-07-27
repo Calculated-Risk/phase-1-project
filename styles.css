@@ -2,7 +2,7 @@ body {
     padding: 0px;
     margin: 0px;
     height: 900px;
-    background-image: url('images/diego-ph-5LOhydOtTKU-unsplash.jpg');
+    background-image: url("images/PIRO4D-Pixabay.png");
     background-size: cover;
 }
 
@@ -10,7 +10,7 @@ h1 {
     font-family: Optima, sans-serif;
     text-align: center;
     color: #605F5E;
-    background-color: #1D3461;
+    background-color: #1955ceda;
     padding: 30px;
     margin: 0px;
 }
@@ -20,16 +20,20 @@ h2 {
     font-size:xx-large;
     font-family: sans-serif;
     text-decoration: underline;
+    text-align: center;
 }
 
 #countryResults {
     font-family:sans-serif;
     font-weight: bolder;
+    color: #FFFFFF;
+    text-align: center;
 
 }
 
 #nameCountry{
-    color: #1F487E;
+    color: #e81212;
+    font-weight: bolder;
 }
 
 #introParagraph {
@@ -42,7 +46,5 @@ h2 {
     text-align: center;
 }
 
-#countryResults {
-    text-align: center;
-}
+
 
