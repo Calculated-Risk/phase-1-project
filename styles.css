@@ -9,8 +9,9 @@ body {
 h1 {
     font-family: Optima, sans-serif;
     text-align: center;
-    color: #605F5E;
-    background-color: #1955ceda;
+    text-decoration-style: dotted;
+    color: #e87502;
+    background-color: #0d42acda;
     padding: 30px;
     margin: 0px;
 }

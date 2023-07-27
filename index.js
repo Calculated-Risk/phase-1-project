@@ -12,7 +12,7 @@ submit.addEventListener("mouseover", function (e){
 
 // Change Color AFTER Hovered State changed//
 submit.addEventListener("mouseout", function (e){
-  submit.style.background = 'blue';
+  submit.style.background = 'lightblue';
 })
 
 
@@ -37,15 +37,22 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 .then (countryData => {
   countryData.forEach(country => {
     const h2Title = document.createElement('h2')
-    h2Title.innerText = country.name.common;
     const countryFlag = country.flag
     const population = country.population;
     const unMember =  country.unMember;
+    const region = country.region
+    const maps = country.maps.googleMaps
+    const aLink = document.createElement("a")
+    h2Title.innerText = country.name.common;
     nameContainer.append(h2Title)
     flagContainer.append(countryFlag)
     populationContainer.append(population) 
     unMemberContainer.append(unMember)
+    regionContainer.append(region)
     
+    aLink.setAttribute('href', maps)
+    aLink.innerText = 'Click Here'
+    mapsContainer.appendChild(aLink)
   })
 })
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
