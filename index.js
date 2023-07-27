@@ -33,12 +33,12 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     h2Title.innerText = country.name.common;
     const countryFlag = country.flag
     const population = country.population;
-    const unMember =  country.unMember;
+    let unMember =  country.unMember;
     nameContainer.append(h2Title)
     flagContainer.append(countryFlag)
-    populationContainer.append(population)
-    
+    populationContainer.append(population) 
     unMemberContainer.append(unMember)
+    
   })
 })
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
