@@ -1,22 +1,29 @@
 h1 {
+    font-family: Optima, sans-serif;
     text-align: center;
-    color: blue;
+    color: #605F5E;
+    background-color: #1D3461;
+    padding: 30px;
 }
 
 h2 {
-    color: rgba(242, 97, 14, 0.912);
+    color: #F0544F;
     font-size:xx-large;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-decoration: underline
+    font-family: sans-serif;
+    text-decoration: underline;
 }
 
 #countryResults {
-    
+    font-family:sans-serif
+}
+
+#nameCountry{
+    color: #1F487E;
 }
 
 #introParagraph {
     text-align: center;
-    color: rgb(222, 58, 58);
+    color: #FFFFFF;
     
 }
 

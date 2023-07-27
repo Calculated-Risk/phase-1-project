@@ -14,11 +14,11 @@
             </p>
         </div>
 
+        <br>
+
         <form id="countryForm">
-            <label for = "country">Country Name:</label>
+            <label id = 'nameCountry' for = "country">Enter Country Name: 👉</label>
             <input type = 'text' id = 'countryName' name = 'countryName' >
-            <br>
-            <br>
             <input type = 'submit' id = submit value = "Let's See Results!">
         </form>
 
@@ -26,12 +26,14 @@
         <br>
         
         <div id="countryResults">
-            <div id = 'nameContainer'></div>
-            <div id = 'flagContainer'>Country Flag: </div>
-            <br>
-            <div id = 'populationContainer'>Population: </div>
-            <br>
-            <div id = 'unMemberContainer'>Member of the United Nations: </div>
+            <div id = 'innerDivForCountryResults'>
+                <div id = 'nameContainer'></div>
+                <div id = 'flagContainer'>Country Flag: </div>
+                <br>
+                <div id = 'populationContainer'> 👥 Population: </div>
+                <br>
+                <div id = 'unMemberContainer'> 🇺🇳 Member of the United Nations? </div>
+            </div>    
         </div>
 
 

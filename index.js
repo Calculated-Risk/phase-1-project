@@ -1,15 +1,8 @@
-/*  ADD BACKGROUND THAT TRANSITIONS FROM DIFFERENT COUNTRY BACKGROUNDS (ex: shows cathedrals from Rome,
- then it transitions to NYC view background...etc*/
-
- /////////////  GLOBAL  VARIABLES  ///////////////
+/////////////  GLOBAL  VARIABLES  ///////////////
  const formText = document.getElementById("countryName")
- const countryInfoContainer = document.getElementById("countryResults")
- const createParagraph = document.createElement('p')
- const countryUnorderedList = document.getElementById('countryUnorderedList')
- const countryContainerList = document.getElementById('countryContainerList')
+ const countryInfoContainer = document.getElementById("innerDivForCountryResults")
  const submit = document.getElementById('submit')
- 
- ////////////////////////////////////////////////
+
 
 // Change Color for Hovered State OVER SUBMIT BUTTON//
 submit.addEventListener("mouseover", function (e){
@@ -35,15 +28,16 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 })
 .then (response => response.json())
 .then (countryData => {
-  countryData.map(country => {
+  countryData.forEach(country => {
     const h2Title = document.createElement('h2')
     h2Title.innerText = country.name.common;
-    const countryFlag = `${formInput} Flag: ` + country.flag
+    const countryFlag = country.flag
     const population = country.population;
-    const unMember = 'Member of the United Nations? ' + country.unMember;
+    const unMember =  country.unMember;
     nameContainer.append(h2Title)
     flagContainer.append(countryFlag)
     populationContainer.append(population)
+    
     unMemberContainer.append(unMember)
   })
 })
@@ -51,9 +45,5 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 }
 
 
-// STILL HAVENT ADDED THIS IN CORRECTLY!
-//Clear DOM after search results appear and new input is requested
-function clearScreen(){
-    document.getElementById('countryResults').innerText = '';
-}
+
 
