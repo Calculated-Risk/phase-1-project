@@ -42,6 +42,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     const unMember =  country.unMember;
     const region = country.region
     const maps = country.maps.googleMaps
+    const driveSide = country.car.side
     const aLink = document.createElement("a")
     h2Title.innerText = country.name.common;
     nameContainer.append(h2Title)
@@ -49,7 +50,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
     populationContainer.append(population) 
     unMemberContainer.append(unMember)
     regionContainer.append(region)
-    
+    sideOfRoad.append(driveSide)
     aLink.setAttribute('href', maps)
     aLink.innerText = 'Click Here'
     mapsContainer.appendChild(aLink)
@@ -59,6 +60,10 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 }
 
 
+
+// while (countryResultsDiv.firstChild) {
+//   countryInfoContainer.removeChild(countryInfoContainer.firstChild);
+// }
 
 
 
