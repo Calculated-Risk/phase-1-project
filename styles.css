@@ -36,14 +36,17 @@ h2 {
 }
 
 #nameContainer {
+    margin-top: 30px;
     margin-right: 50px;
     padding-top: 35px;
+
 }
 
 #innerDivForCountryResults {
     border: 2px solid rgb(168, 19, 19);
     border-radius: 50px;
     padding: 40px;
+    margin: 20px;
 }
 
 #nameCountry{
