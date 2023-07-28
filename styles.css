@@ -1,4 +1,5 @@
 body {
+    display: flexbox;
     padding: 0px;
     margin: 0px;
     height: 900px;
@@ -17,23 +18,36 @@ h1 {
 }
 
 h2 {
-    color: #F0544F;
+    color: #3bee44;
     font-size:xx-large;
     font-family: sans-serif;
     text-decoration: underline;
     text-align: center;
+    padding-top: 50px;
 }
 
 #countryResults {
+    display: flex;
     font-family:sans-serif;
     font-weight: bolder;
     color: #FFFFFF;
     text-align: center;
+    justify-content: center;
+}
 
+#nameContainer {
+    margin-right: 50px;
+    padding-top: 35px;
+}
+
+#innerDivForCountryResults {
+    border: 2px solid rgb(168, 19, 19);
+    border-radius: 50px;
+    padding: 40px;
 }
 
 #nameCountry{
-    color: #e81212;
+    color: white;
     font-weight: bolder;
 }
 
