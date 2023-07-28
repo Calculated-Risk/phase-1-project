@@ -24,7 +24,7 @@ countryForm.addEventListener("submit", function(e) {
    countryForm.reset();
 })
 
-// Getting the country name from user input //
+// Getting the country name from user input and provide country info //
 function getCountryInput() {
 const formInput = formText.value;
 fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
@@ -43,6 +43,9 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
    const maps = country.maps.googleMaps
    const driveSide = country.car.side
    const aLink = document.createElement("a")
+   const flagTwo = country.flags.png
+   imgFlag = document.createElement('img');
+   imgFlag.src = (flagTwo)
    h2Title.innerText = country.name.common;
    nameContainer.append(h2Title)
    populationContainer.append(population) 
@@ -52,13 +55,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
    aLink.setAttribute('href', maps)
    aLink.innerText = 'Click Here'
    mapsContainer.appendChild(aLink)
-
-
-
-  const flagTwo = country.flags.png
-    imgFlag = document.createElement('img');
-    imgFlag.src = flagTwo
-    flagBig.append(imgFlag)
+   flagBig.append(imgFlag)
  })
 })
 .catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
