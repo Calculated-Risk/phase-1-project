@@ -3,6 +3,7 @@ const formText = document.getElementById("countryName")
 const countryInfoContainer = document.getElementById("innerDivForCountryResults")
 const countryResultsDiv = document.getElementById("countryResults")
 const submit = document.getElementById('submit')
+const countryNameTitle = document.getElementById('countryNameTitle')
 
 
 // Change Color for Hovered State OVER SUBMIT BUTTON//
@@ -36,7 +37,6 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
 .then (response => response.json())
 .then (countryData => {
  countryData.forEach(country => {
-   const h2Title = document.createElement('h2')
    const population = country.population;
    const unMember =  country.unMember;
    const region = country.region
@@ -46,8 +46,7 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
    const flagTwo = country.flags.png
    imgFlag = document.createElement('img');
    imgFlag.src = (flagTwo)
-   h2Title.innerText = country.name.common;
-   nameContainer.append(h2Title)
+   countryNameTitle.innerText = country.name.common;
    populationContainer.append(population) 
    unMemberContainer.append(unMember)
    regionContainer.append(region)
