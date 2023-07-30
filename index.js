@@ -4,7 +4,12 @@ const countryInfoContainer = document.getElementById("innerDivForCountryResults"
 const countryResultsDiv = document.getElementById("countryResults")
 const submit = document.getElementById('submit')
 const countryNameTitle = document.getElementById('countryNameTitle')
-
+const flagImage = document.getElementById("flagBig")
+const populationContainer = document.getElementById('populationContainer')
+const unMemberContainer = document.getElementById ('unMemberContainer')
+const region = document.getElementById("regionContainer")
+const sideOfRoad = document.getElementById("sideOfRoad")
+const maps = document.getElementById("mapsContainer")
 
 
 // function that would take in arguments which would change the elements bg color
@@ -36,9 +41,23 @@ function handleResponse(response) {
    return response.json();
 };
 
+
+//function to remove old search results and replace with new results
+function removePreviousCountryInfo(){
+   countryNameTitle.innerText = "";
+   flagImage.innerText = "";
+   unMemberContainer.innerText = "";
+   populationContainer.innerText = "";
+   region.innerText = "";
+   sideOfRoad.innerText = "";
+   maps.innerText = "";
+
+}
+
 // function that processes country data and appends elements to DOM
 function processCountryData(countryData) {
- countryData.forEach(country => {
+   removePreviousCountryInfo()  
+   countryData.forEach(country => {
    renderCountryInfo(country);
  })
 };
