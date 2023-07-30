@@ -77,4 +77,5 @@ function getCountryInput() {
    })
    .then (handleResponse)
    .then (processCountryData)
+   .catch(error => alert("Oops, we couldn't find that! Please check your spelling."))
 };
