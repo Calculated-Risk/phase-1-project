@@ -6,16 +6,21 @@ const submit = document.getElementById('submit')
 const countryNameTitle = document.getElementById('countryNameTitle')
 
 
+
+// function that would take in arguments which would change the elements bg color
+function changeBackgroundColor(element, color){
+   element.style.background = color;
+};
+
 // Change Color for Hovered State OVER SUBMIT BUTTON//
-submit.addEventListener("mouseover", function (e){
-   submit.style.background = 'green';
-})
+submit.addEventListener("mouseover", function(e){
+   changeBackgroundColor(submit, 'green');
+});
 
 // Change Color AFTER Hovered State changed//
 submit.addEventListener("mouseout", function (e){
- submit.style.background = 'lightblue';
-})
-
+   changeBackgroundColor(submit, 'lightblue');
+});
 
 // Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
