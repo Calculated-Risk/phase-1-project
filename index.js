@@ -13,12 +13,12 @@ function changeBackgroundColor(element, color){
 };
 
 // Change Color for Hovered State OVER SUBMIT BUTTON//
-submit.addEventListener("mouseover", function(e){
+submit.addEventListener("mouseover", function(){
    changeBackgroundColor(submit, 'green');
 });
 
 // Change Color AFTER Hovered State changed//
-submit.addEventListener("mouseout", function (e){
+submit.addEventListener("mouseout", function (){
    changeBackgroundColor(submit, 'lightblue');
 });
 
@@ -30,18 +30,21 @@ countryForm.addEventListener("submit", function(e) {
    countryForm.reset();
 })
 
-// Getting the country name from user input and provide country info //
-function getCountryInput() {
-const formInput = formText.value;
-fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
-   headers: {
-   'Content-Type': 'application/json',
-   'Accept': "application/json"
-   }
-})
-.then (response => response.json())
-.then (countryData => {
+
+// function to handle response data
+function handleResponse(response) {
+   return response.json();
+};
+
+// function that processes country data and appends elements to DOM
+function processCountryData(countryData) {
  countryData.forEach(country => {
+   renderCountryInfo(country);
+ })
+};
+
+//function that renders country info and appends elements to DOM
+function renderCountryInfo(country){   
    const population = country.population;
    const unMember =  country.unMember;
    const region = country.region
@@ -60,10 +63,18 @@ fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
    aLink.innerText = 'Click Here'
    mapsContainer.appendChild(aLink)
    flagBig.append(imgFlag)
- })
-})
-.catch(error => alert('Oops, we could\'t find that! Please check your spelling.'))
-}
+};
 
+//get country input and fetch data via API
 
-
+function getCountryInput() {
+   const formInput = formText.value;
+   fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': "application/json"
+      }
+   })
+   .then (handleResponse)
+   .then (processCountryData)
+};
