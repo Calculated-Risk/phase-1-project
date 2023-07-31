@@ -33,6 +33,10 @@ h2 {
     justify-content: center;
 }
 
+#nameContainerAndFlag {
+    margin-top: 95px;
+}
+
 #nameContainer {
     margin-top: 30px;
     margin-right: 50px;
