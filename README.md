@@ -1,2 +1,6 @@
-# phase-1-project
-[Flatiron School] Phase 1 Project
+# Project Title
+infoNation: Explore Countries
+
+
+# Project Description
+
