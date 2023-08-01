@@ -13,4 +13,10 @@ Flatiron School's phase - 1 project. This project allows users to interact with 
 6. A Google maps link is provided for the given country
 
 
+The technology used for this application is HTML, CSS, and JavaScript.
+
+Some challenges came from trying to use/remember certain methods to apply in the JS file. Code structure was also something I tried keeping in mind as I continued writing new lines. There are some features in the future I would love to implement, for more info please see NOTES.md.
+
+
+
 
