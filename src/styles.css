@@ -18,7 +18,7 @@ h1 {
 }
 
 h2 {
-    color: #1dfb00;
+    color: #e9da0a;
     font-size:xx-large;
     font-family: sans-serif;
     text-decoration: underline;
@@ -67,6 +67,8 @@ h2 {
     margin-bottom: 60px;
 }
 
-
+.question {
+    color: #bbff01e8;
+}
 
 
