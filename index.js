@@ -17,18 +17,20 @@ function changeBackgroundColor(element, color){
    element.style.background = color;
 };
 
+
 // Change Color for Hovered State OVER SUBMIT BUTTON//
 submit.addEventListener("mouseover", function(){
    changeBackgroundColor(submit, 'green');
 });
+
 
 // Change Color AFTER Hovered State changed//
 submit.addEventListener("mouseout", function (){
    changeBackgroundColor(submit, 'lightblue');
 });
 
-// DOMContentLoaded added
 
+// DOMContentLoaded added
 submit.addEventListener('DOMContentLoaded', function(){
    getCountryInput()
 })
@@ -60,6 +62,7 @@ function removePreviousCountryInfo(){
 
 }
 
+
 // function that processes country data and appends elements to DOM
 function processCountryData(countryData) {
    removePreviousCountryInfo()  
@@ -67,6 +70,7 @@ function processCountryData(countryData) {
    renderCountryInfo(country);
  })
 };
+
 
 //function that renders country info and appends elements to DOM
 function renderCountryInfo(country){   
@@ -90,8 +94,8 @@ function renderCountryInfo(country){
    flagBig.append(imgFlag)
 };
 
-//get country input and fetch data via API
 
+//get country input and fetch data via API
 function getCountryInput() {
    const formInput = formText.value;
    fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
