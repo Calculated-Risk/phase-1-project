@@ -27,13 +27,17 @@ submit.addEventListener("mouseout", function (){
    changeBackgroundColor(submit, 'lightblue');
 });
 
+// DOMContentLoaded added
+
+submit.addEventListener('DOMContentLoaded', function(){
+   getCountryInput()
+})
 
 
 // Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
    e.preventDefault();
    getCountryInput()
-   console.log('Clicked')
    countryForm.reset();
 })
 
