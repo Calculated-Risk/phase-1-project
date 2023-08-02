@@ -1,5 +1,5 @@
 # Project Title
-infoNation: Explore Countries
+nationInquiry: Explore Countries
 
 
 # Project Description
@@ -32,9 +32,9 @@ Great question! You can make a copy and explore around yourself.
 # Credits
 
 1. Background Image: PIRO4D at Pixabay
-2. My amazing colleagues at work! Thank you!!
-3. Flatiron students & alumn's who have given me feedback and assistance along the way! Thank you!!
-4. MDN resources
+2. Feedback from my amazing colleagues at work! Thank you so much!!
+3. Flatiron students & alum's who have given me feedback and assistance along the way! Thank you!!
+4. Mozilla / MDN resources 
 5. W3Schools resources
 
 
