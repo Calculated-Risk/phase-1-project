@@ -19,4 +19,24 @@ Some challenges came from trying to use/remember certain methods to apply in the
 
 
 
+# How to use this project?
+
+Great question! You can make a copy and explore around yourself. 
+
+1. Fork the repository via Github.
+2. Select "Clone" and select the clone method that works for your current setup. 
+3. Once cloned, you can then use the terminal and open the index.html file which will take you directly to the application page.
+4. Start searching away! 
+
+
+# Credits
+
+1. Background Image: PIRO4D at Pixabay
+2. My amazing colleagues at work! Thank you!!
+3. Flatiron students & alumn's who have given me feedback and assistance along the way! Thank you!!
+4. MDN resources
+5. W3Schools resources
+
+
+
 
