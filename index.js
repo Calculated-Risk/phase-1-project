@@ -44,33 +44,6 @@ countryForm.addEventListener("submit", function(e) {
 })
 
 
-// function to handle response data
-function handleResponse(response) {
-   return response.json();
-};
-
-
-//function to remove old search results and replace with new results
-function removePreviousCountryInfo(){
-   countryNameTitle.innerText = "";
-   flagImage.innerText = "";
-   unMemberContainer.innerText = "";
-   populationContainer.innerText = "";
-   region.innerText = "";
-   sideOfRoad.innerText = "";
-   maps.innerText = "";
-
-}
-
-
-// function that processes country data and appends elements to DOM
-function processCountryData(countryData) {
-   removePreviousCountryInfo()  
-   countryData.forEach(country => {
-   renderCountryInfo(country);
- })
-};
-
 
 //function that renders country info and appends elements to DOM
 function renderCountryInfo(country){   
@@ -108,3 +81,29 @@ function getCountryInput() {
    .then (processCountryData)
    .catch(error => alert("Oops, we couldn't find that! Please check your spelling."))
 };
+
+
+// function to handle response data
+function handleResponse(response) {
+   return response.json();
+};
+
+// function that processes country data and appends elements to DOM
+function processCountryData(countryData) {
+   removePreviousCountryInfo()  
+   countryData.forEach(country => {
+   renderCountryInfo(country);
+ })
+};
+
+//function to remove old search results and replace with new results
+function removePreviousCountryInfo(){
+   countryNameTitle.innerText = "";
+   flagImage.innerText = "";
+   unMemberContainer.innerText = "";
+   populationContainer.innerText = "";
+   region.innerText = "";
+   sideOfRoad.innerText = "";
+   maps.innerText = "";
+
+}
