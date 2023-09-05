@@ -30,11 +30,6 @@ submit.addEventListener("mouseout", function (){
 });
 
 
-// DOMContentLoaded added
-submit.addEventListener('DOMContentLoaded', function(){
-   getCountryInput()
-})
-
 
 // Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
@@ -52,58 +47,67 @@ function renderCountryInfo(country){
    const region = country.region
    const maps = country.maps.googleMaps
    const driveSide = country.car.side
-   const aLink = document.createElement("a")
    const flagTwo = country.flags.png
-   imgFlag = document.createElement('img');
-   imgFlag.src = (flagTwo)
+   
+   // Create a card element for the country
+   const countryCard = document.createElement("div");
+   countryCard.classList.add("country-card");
+
+   // Here I will create div's for each country info and add the info received from the API. Then render to the DOM
+   const imgFlag = document.createElement('img');
+   imgFlag.src = flagTwo;
+   countryCard.appendChild(imgFlag);
+
+   const countryNameTitle = document.createElement("h2");
    countryNameTitle.innerText = country.name.common;
-   populationContainer.append(population) 
-   unMemberContainer.append(unMember)
-   regionContainer.append(region)
-   sideOfRoad.append(driveSide)
-   aLink.setAttribute('href', maps)
-   aLink.innerText = 'Click Here'
-   mapsContainer.appendChild(aLink)
-   flagBig.append(imgFlag)
+   countryCard.appendChild(countryNameTitle);
+
+   const populationContainer = document.createElement('div');
+   populationContainer.innerText = `Population: ${population}`;
+   countryCard.appendChild(populationContainer);
+
+   const unMemberContainer = document.createElement('div');
+   unMemberContainer.innerText = `UN Member:  ${unMember}`;
+   countryCard.appendChild(unMemberContainer);
+
+   const regionContainer = document.createElement('div');
+   regionContainer.innerText = `Region:  ${region}`;
+   countryCard.appendChild(regionContainer);
+
+   const sideOfRoadContainer = document.createElement('div');
+   sideOfRoadContainer.innerText = `Side of Road:  ${driveSide}`;
+   countryCard.appendChild(sideOfRoadContainer);
+
+   const aLink = document.createElement("a");
+   aLink.setAttribute('href', maps);
+   aLink.innerText = 'Click Here';
+   countryCard.appendChild(aLink);
+
+   // Append the card to the countryInfoContainer
+   countryInfoContainer.appendChild(countryCard);
 };
 
 
 //get country input and fetch data via API
 function getCountryInput() {
    const formInput = formText.value;
-   fetch (`https://restcountries.com/v3.1/name/${formInput}?fullText=true`, {
+   fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
       headers: {
       'Content-Type': 'application/json',
       'Accept': "application/json"
       }
    })
-   .then (handleResponse)
+   .then (response => response.json())
    .then (processCountryData)
    .catch(error => alert("Oops, we couldn't find that! Please check your spelling."))
 };
 
 
-// function to handle response data
-function handleResponse(response) {
-   return response.json();
-};
 
 // function that processes country data and appends elements to DOM
 function processCountryData(countryData) {
-   removePreviousCountryInfo()  
+   countryInfoContainer.innerText = ""  
    countryData.forEach(country => {
    renderCountryInfo(country);
  })
 };
-
-//function to remove old search results and replace with new results
-function removePreviousCountryInfo(){
-   countryNameTitle.innerText = "";
-   flagImage.innerText = "";
-   unMemberContainer.innerText = "";
-   populationContainer.innerText = "";
-   region.innerText = "";
-   sideOfRoad.innerText = "";
-   maps.innerText = "";
-
-}
