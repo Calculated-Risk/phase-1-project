@@ -30,14 +30,12 @@ submit.addEventListener("mouseout", function (){
 });
 
 
-
 // Add items to DOM once the "submit" option has been clicked //
 countryForm.addEventListener("submit", function(e) {
    e.preventDefault();
    getCountryInput()
    countryForm.reset();
 })
-
 
 
 //function that renders country info and appends elements to DOM
@@ -99,15 +97,16 @@ function getCountryInput() {
    })
    .then (response => response.json())
    .then (processCountryData)
-   .catch(error => alert("Oops, we couldn't find that! Please check your spelling."))
+   .catch(function(error){
+      alert("Oops, we couldn't find that! Please check your spelling.")
+   })
 };
-
 
 
 // function that processes country data and appends elements to DOM
 function processCountryData(countryData) {
    countryInfoContainer.innerText = ""  
-   countryData.forEach(country => {
-   renderCountryInfo(country);
- })
-};
+   countryData.forEach(function(country){
+      renderCountryInfo(country)
+   })
+}
