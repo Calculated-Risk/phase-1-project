@@ -103,6 +103,7 @@ function getCountryInput() {
 };
 
 
+
 // function that processes country data and appends elements to DOM
 function processCountryData(countryData) {
    countryInfoContainer.innerText = ""  
