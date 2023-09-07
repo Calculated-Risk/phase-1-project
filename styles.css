@@ -28,7 +28,7 @@ h2 {
     display: flex;
     font-family:sans-serif;
     font-weight: bolder;
-    color: #FFFFFF;
+    color: rgb(234, 22, 22);
     text-align: center;
     justify-content: center;
 }

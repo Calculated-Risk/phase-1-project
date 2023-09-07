@@ -78,7 +78,7 @@ function renderCountryInfo(country){
 
    const aLink = document.createElement("a");
    aLink.setAttribute('href', maps);
-   aLink.innerText = 'Click Here';
+   aLink.innerText = 'Google Maps Link';
    countryCard.appendChild(aLink);
 
    // Append the card to the countryInfoContainer
