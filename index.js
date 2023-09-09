@@ -38,6 +38,31 @@ countryForm.addEventListener("submit", function(e) {
 })
 
 
+//get country input and fetch data via API
+function getCountryInput() {
+   const formInput = formText.value;
+   fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': "application/json"
+      }
+   })
+   .then (response => response.json())
+   .then (processCountryData)
+   .catch(function(error){
+      alert("Oops, we couldn't find that! Please check your spelling.")
+   })
+};
+
+
+// function that processes country data and appends elements to DOM
+function processCountryData(countryData) {
+   countryInfoContainer.innerText = ""  
+   countryData.forEach(function(country){
+      renderCountryInfo(country)
+   })
+}
+
 //function that renders country info and appends elements to DOM
 function renderCountryInfo(country){   
    const population = country.population;
@@ -86,28 +111,4 @@ function renderCountryInfo(country){
 };
 
 
-//get country input and fetch data via API
-function getCountryInput() {
-   const formInput = formText.value;
-   fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
-      headers: {
-      'Content-Type': 'application/json',
-      'Accept': "application/json"
-      }
-   })
-   .then (response => response.json())
-   .then (processCountryData)
-   .catch(function(error){
-      alert("Oops, we couldn't find that! Please check your spelling.")
-   })
-};
 
-
-
-// function that processes country data and appends elements to DOM
-function processCountryData(countryData) {
-   countryInfoContainer.innerText = ""  
-   countryData.forEach(function(country){
-      renderCountryInfo(country)
-   })
-}
