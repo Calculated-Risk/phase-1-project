@@ -87,19 +87,19 @@ function renderCountryInfo(country){
    countryCard.appendChild(countryNameTitle);
 
    const populationContainer = document.createElement('div');
-   populationContainer.innerText = `Population: ${population}`;
+   populationContainer.innerText = `👥 Population:  ${population}`;
    countryCard.appendChild(populationContainer);
 
    const unMemberContainer = document.createElement('div');
-   unMemberContainer.innerText = `UN Member:  ${unMember}`;
+   unMemberContainer.innerText = `🇺🇳 UN Member:  ${unMember}`;
    countryCard.appendChild(unMemberContainer);
 
    const regionContainer = document.createElement('div');
-   regionContainer.innerText = `Region:  ${region}`;
+   regionContainer.innerText = `🌎 Region:  ${region}`;
    countryCard.appendChild(regionContainer);
 
    const sideOfRoadContainer = document.createElement('div');
-   sideOfRoadContainer.innerText = `Side of Road:  ${driveSide}`;
+   sideOfRoadContainer.innerText = `🛣️ Side of Road:  ${driveSide}`;
    countryCard.appendChild(sideOfRoadContainer);
 
 
