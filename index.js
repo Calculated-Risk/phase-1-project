@@ -40,6 +40,7 @@ countryForm.addEventListener("submit", function(e) {
 
 //get country input and fetch data via API
 function getCountryInput() {
+   debugger
    const formInput = formText.value;
    fetch (`https://restcountries.com/v3.1/name/${formInput}`, {
       headers: {
@@ -100,6 +101,8 @@ function renderCountryInfo(country){
    const sideOfRoadContainer = document.createElement('div');
    sideOfRoadContainer.innerText = `Side of Road:  ${driveSide}`;
    countryCard.appendChild(sideOfRoadContainer);
+
+
 
    const aLink = document.createElement("a");
    aLink.setAttribute('href', maps);
