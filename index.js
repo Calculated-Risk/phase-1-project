@@ -1,10 +1,8 @@
 /////////////  GLOBAL  VARIABLES  ///////////////
 const formText = document.getElementById("countryName")
 const countryInfoContainer = document.getElementById("innerDivForCountryResults")
-const countryResultsDiv = document.getElementById("countryResults")
 const submit = document.getElementById('submit')
 const countryNameTitle = document.getElementById('countryNameTitle')
-const flagImage = document.getElementById("flagBig")
 const populationContainer = document.getElementById('populationContainer')
 const unMemberContainer = document.getElementById ('unMemberContainer')
 const region = document.getElementById("regionContainer")
