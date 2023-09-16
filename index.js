@@ -2,12 +2,7 @@
 const formText = document.getElementById("countryName")
 const countryInfoContainer = document.getElementById("innerDivForCountryResults")
 const submit = document.getElementById('submit')
-const countryNameTitle = document.getElementById('countryNameTitle')
-const populationContainer = document.getElementById('populationContainer')
-const unMemberContainer = document.getElementById ('unMemberContainer')
-const region = document.getElementById("regionContainer")
-const sideOfRoad = document.getElementById("sideOfRoad")
-const maps = document.getElementById("mapsContainer")
+
 
 
 // function that would take in arguments which would change the elements bg color
